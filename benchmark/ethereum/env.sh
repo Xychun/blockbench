@@ -1,5 +1,5 @@
 # folder that contains all benchmark scripts (this could be on a network share)
-ETH_HOME=/home/$USER/nfsmount/blockbench/benchmark/ethereum
+ETH_HOME=~/blockbench/benchmark/ethereum
 # file that contains ip addresses of servers that should be used for setting up the ethereum network
 HOSTS=$ETH_HOME/hosts
 RPC_PORT=8545
@@ -20,7 +20,7 @@ RPCPORT='8000'
 # private key that should be used to create an account as ethereum coinbase
 PRIVATEKEY=$ETH_HOME/privKey
 # Password used for unlocking the above private key or for creating a new account as ethereum coinbase
-PWD="1
+PWD=""
 
 ##comment these out for smallbank
 #EXE_HOME=$ETH_HOME/../../src/smallbank/ethereum/ycsb

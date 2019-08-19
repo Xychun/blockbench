@@ -7,7 +7,7 @@ LOG_DIR=$ETH_HOME/ycsb_logs
 EXE_HOME=$ETH_HOME/../../src/macro/kvstore
 #EXE_HOME=/home/$USER/blockbench/src/donothing
 BENCHMARK=ycsb
-USER=bcuser
+USER=ubuntu
 
 ##comment these out for smallbank
 #EXE_HOME=$ETH_HOME/../../src/smallbank/ethereum/ycsb

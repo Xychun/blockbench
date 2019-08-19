@@ -6,7 +6,7 @@ ETH_DATA=/home/$USER/eth
 LOG_DIR=$ETH_HOME/donothing_donothingresults_1
 EXE_HOME=/home/$USER/blockbench/src/donothing
 BENCHMARK=ycsb
-USER=bcuser
+USER=ubuntu
 
 ##comment these out for smallbank
 #EXE_HOME=$ETH_HOME/../../src/smallbank/ethereum/ycsb

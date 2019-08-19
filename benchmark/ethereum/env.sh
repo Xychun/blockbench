@@ -14,7 +14,7 @@ EXE_HOME=$ETH_HOME/../../src/macro/kvstore
 # name/type of the benchmark
 BENCHMARK=ycsb
 # SSH user (with public key auth) to use to run the scripts on all machines
-USER=bcuser
+USER=ubuntu
 # RPCport used by clients and ethereum nodes
 RPCPORT='8000'
 # private key that should be used to create an account as ethereum coinbase

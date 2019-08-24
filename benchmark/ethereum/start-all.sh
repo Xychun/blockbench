@@ -13,7 +13,9 @@ for host in `cat $HOSTS`; do
     echo sharing peer list with $host
     scp -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no addPeer.txt $USER@$host:$ETH_HOME/
     echo start mining on node $host
-    ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $USER@$host $ETH_HOME/start-mining.sh
+    port=`expr $PORT_INIT + $i`
+    rpcport=`expr $RPCPORT_INIT + $i`
+    ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $USER@$host $ETH_HOME/start-mining.sh $port $rpcport
     echo done node $host
   fi
   let i=$i+1

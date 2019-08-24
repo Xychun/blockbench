@@ -2,7 +2,7 @@
 ETH_HOME=/home/ubuntu/blockbench/benchmark/ethereum
 # file that contains ip addresses of servers that should be used for setting up the ethereum network
 HOSTS=$ETH_HOME/hosts
-RPC_PORT=8545
+
 # file that contains ip addresses of servers that should be used for running the benchmark clients
 CLIENTS=$ETH_HOME/clients
 # folder in which ethereum nodes should store the ethereum data
@@ -15,12 +15,14 @@ EXE_HOME=$ETH_HOME/../../src/macro/kvstore
 BENCHMARK=ycsb
 # SSH user (with public key auth) to use to run the scripts on all machines
 USER=ubuntu
-# RPCport used by clients and ethereum nodes
-RPCPORT='8000'
 # private key that should be used to create an account as ethereum coinbase
 PRIVATEKEY=$ETH_HOME/privKey
 # Password used for unlocking the above private key or for creating a new account as ethereum coinbase
 PWD=""
+# port used by clients and ethereum nodes
+PORT_INIT=30001
+# RPCport used by clients and ethereum nodes
+RPCPORT_INIT=8001
 
 ##comment these out for smallbank
 #EXE_HOME=$ETH_HOME/../../src/smallbank/ethereum/ycsb

@@ -1,5 +1,5 @@
 # folder that contains all benchmark scripts (this could be on a network share)
-ETH_HOME=~/blockbench/benchmark/ethereum
+ETH_HOME=/home/ubuntu/blockbench/benchmark/ethereum
 # file that contains ip addresses of servers that should be used for setting up the ethereum network
 HOSTS=$ETH_HOME/hosts
 RPC_PORT=8545

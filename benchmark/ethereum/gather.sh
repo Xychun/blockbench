@@ -1,5 +1,6 @@
 #!/bin/bash
 #nnodes
+echo script start - gather.sh
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh 
 
@@ -12,3 +13,4 @@ for host in `cat $HOSTS`; do
   let i=$i+1
   echo $i
 done
+echo script end - gather.sh

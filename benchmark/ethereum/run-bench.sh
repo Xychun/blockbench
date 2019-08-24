@@ -3,9 +3,11 @@
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh
 
+printf " \n++++++++++++ \nSTOP ALL CLIENTS AND HOSTS \n++++++++++++\n"
 ./stop-all.sh $1 
-
+printf " \n++++++++++++ \nSETUP CLIENTS \n++++++++++++\n"
 ./init-all.sh $1 
+printf " \n++++++++++++ \nSTART MINING HOSTS \n++++++++++++\n"
 ./start-all.sh $1 
 
 let M=240+40*$1
@@ -22,4 +24,3 @@ sleep $M
 ./stop-all.sh $1
 
 sleep 5
-

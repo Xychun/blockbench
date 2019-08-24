@@ -3,13 +3,15 @@
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh
 
+clients=$1
+servers=$2
+
 let i=0
-let IDX=$1/2 #$1 is #clients, we take only half of them 
-echo starting clients
+let IDX=$(( clients / 2 )) #$1 is #clients, we take only half of them 
+echo script start - start-multi-clients.sh
 for client in `cat $CLIENTS`; do
   if [[ $i -lt $IDX ]]; then
     echo starting client $client  threads=$3 clientNo=$i nservers=$2 txrate=$4
-#  ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $client 'cd /users/dinhtta/blockchain-perf/ethereum ; ./start-clients.sh '$3 $i $2
     ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $client $ETH_HOME/start-clients.sh $3 $i $2 $4
   fi
   let i=$i+1
@@ -35,7 +37,7 @@ if [[ $5 == "-drop" ]]; then
     let i=$i+1
   done
 else
-  let M=$2*10+240
+  let M=$(( servers * 10 + 240 ))
   echo "sleeping $M seconds before killing drivers (clients)"
   sleep $M
   for client in `cat $CLIENTS`; do

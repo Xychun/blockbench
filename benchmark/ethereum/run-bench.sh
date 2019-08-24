@@ -3,6 +3,8 @@
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh
 
+# $1 = <nservers> $2 = <nthreads> $3 = <nclients> $4 = <txrate>
+
 printf " \n++++++++++++ \nSTOP ALL CLIENTS AND HOSTS \n++++++++++++\n"
 ./stop-all.sh $1 
 printf " \n++++++++++++ \nSETUP CLIENTS \n++++++++++++\n"

@@ -1,21 +1,22 @@
 #!/bin/bash
 #num_clients num_nodes threads tx_rate [-drop]
+echo script start - start-multi-clients.sh
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh
 
-clients=$1
-servers=$2
-
+let clients=$1
+let servers=$2
 let i=0
-let IDX=$(( clients / 2 )) #$1 is #clients, we take only half of them 
-echo script start - start-multi-clients.sh
+
+echo "==== starting all clients ===="
 for client in `cat $CLIENTS`; do
-  if [[ $i -lt $IDX ]]; then
+  if [[ $i -lt $clients ]]; then
     echo starting client $client  threads=$3 clientNo=$i nservers=$2 txrate=$4
     ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $client $ETH_HOME/start-clients.sh $3 $i $2 $4
   fi
   let i=$i+1
 done
+echo "==== all clients started ===="
 
 if [[ $5 == "-drop" ]]; then
   let M=$2*10+240

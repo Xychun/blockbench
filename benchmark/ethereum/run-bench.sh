@@ -1,9 +1,7 @@
 #!/bin/bash
-#arg num_nodes #num_threads num_clients tx_rate [-drop]
+#args: num_nodes #num_threads num_clients tx_rate [-drop]
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh
-
-# $1 = <nservers> $2 = <nthreads> $3 = <nclients> $4 = <txrate>
 
 printf " \n++++++++++++ \nSTOP ALL CLIENTS AND HOSTS \n++++++++++++\n"
 ./stop-all.sh $1 

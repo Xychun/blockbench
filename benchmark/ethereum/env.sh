@@ -8,6 +8,8 @@ CLIENTS=$ETH_HOME/clients
 ETH_DATA=/home/$USER/eth
 # folder in which benchmark clients should store their log files
 LOG_DIR=$ETH_HOME/ycsb
+# the type of the benchmark
+BENCHMARK=ycsb
 # folder that contains the benchmark (client) executable (make sure that you have build the client) (this could be on a network share)
 EXE_HOME=$ETH_HOME/../../src/macro/kvstore
 # name/type of the benchmark

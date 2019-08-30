@@ -322,15 +322,20 @@ std::string deploy_smart_contract(const std::string &endpoint,
       break;
   }
   auto r = send_jsonrpc_request(endpoint, REQUEST_HEADERS, txn_data);
+  std::cout << "txn_data: " << txn_data << std::endl;
+  std::cout << "endpoint: " << endpoint << " from address: " << from_address << std::endl;
+  std::cout << "r: " << r << std::endl;
   return get_json_field(r, "result");
 }
 
 std::string lookup_smart_contract_address_or_die(const std::string &endpoint,
                                                  const std::string &receipt) {
+  
   auto r = send_jsonrpc_request(endpoint, REQUEST_HEADERS,
                                 GET_SMART_CONTRACT_ADDRESS_PREFIX + receipt +
                                     GET_SMART_CONTRACT_ADDRESS_SUFFIX);
 
+  std::cout << "endpoint: " << endpoint << " receipt: " << receipt << " r: " << r << std::endl;
   assert(r.find("\"result\":null") == std::string::npos);
   return get_json_field(r, "contractAddress");
 }

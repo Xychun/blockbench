@@ -265,6 +265,7 @@ inline std::string deploy_smart_contract(const std::string &endpoint,
   std::string txn_data = DEPLOY_SMARTCONTRACT_PREFIX + from_address;
   txn_data += DEPLOY_SB_SMARTCONTRACT_SUFFIX;
   auto r = send_jsonrpc_request(endpoint, REQUEST_HEADERS, txn_data);
+  std::cout << " r: " << r << std::endl;
   return get_json_field(r, "result");
 }
 

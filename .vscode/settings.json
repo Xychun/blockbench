@@ -1,0 +1,54 @@
+{
+  "deploy.reloaded": {
+    "ignore": [".ssh", ".vscode", ".git", ".DS_Store"],
+    "packages": [
+      {
+        "name": "my blockbench",
+        "files": ["**"],
+        "deployOnSave": ["Quorum0", "Quorum1", "Quorum2", "Quorum3", "Quorum4"]
+      }
+    ],
+    "targets": [
+      {
+        "type": "sftp",
+        "name": "Quorum0",
+        "host": "10.195.2.38",
+        "user": "ubuntu",
+        "dir": "/home/ubuntu/blockbench",
+        "privateKey": "/Users/Juuu/.ssh/JDev.pem"
+      },
+      {
+        "type": "sftp",
+        "name": "Quorum1",
+        "host": "10.195.1.41",
+        "user": "ubuntu",
+        "dir": "/home/ubuntu/blockbench",
+        "privateKey": "/Users/Juuu/.ssh/JDev.pem"
+      },
+      {
+        "type": "sftp",
+        "name": "Quorum2",
+        "host": "10.195.2.44",
+        "user": "ubuntu",
+        "dir": "/home/ubuntu/blockbench",
+        "privateKey": "/Users/Juuu/.ssh/JDev.pem"
+      },
+      {
+        "type": "sftp",
+        "name": "Quorum3",
+        "host": "10.195.2.99",
+        "user": "ubuntu",
+        "dir": "/home/ubuntu/blockbench",
+        "privateKey": "/Users/Juuu/.ssh/JDev.pem"
+      },
+      {
+        "type": "sftp",
+        "name": "Quorum4",
+        "host": "10.195.2.111",
+        "user": "ubuntu",
+        "dir": "/home/ubuntu/blockbench",
+        "privateKey": "/Users/Juuu/.ssh/JDev.pem"
+      }
+    ]
+  }
+}

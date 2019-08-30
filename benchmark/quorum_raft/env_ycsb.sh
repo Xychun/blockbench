@@ -1,7 +1,7 @@
 QUO_HOME=~/blockbench/benchmark/quorum_raft
 HOSTS=$QUO_HOME/hosts
 CLIENTS=$QUO_HOME/clients
-QUO_DATA=/data/fuwanzeng/quorum_raft
+QUO_DATA=/data/ubuntu/quorum_raft
 LOG_DIR=$QUO_HOME/../data/raft
 EXE_HOME=$QUO_HOME/../../src/macro/kvstore
 BENCHMARK=ycsb

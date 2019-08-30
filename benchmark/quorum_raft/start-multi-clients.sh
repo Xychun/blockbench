@@ -9,7 +9,7 @@ let IDX=$1/2
 for client in `cat $CLIENTS`; do
   if [[ $i -lt $IDX ]]; then
     echo $client index $i
-    ssh -oStrictHostKeyChecking=no $client $QUO_HOME/start-clients.sh $3 $i $2 $4
+    ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $client $QUO_HOME/start-clients.sh $3 $i $2 $4
     #echo "rp 10"
     #sleep 10
   fi
@@ -24,7 +24,7 @@ if [[ $5 == "-drop" ]]; then
   let i=0
   for server in `cat $HOSTS`; do
     if [[ $i -ge $idx ]]; then
-      ssh -oStrictHostKeyChecking=no $server killall -KILL ${QUORUM} peer java 
+      ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $server killall -KILL ${QUORUM} peer java 
       echo "Dropped "$server
     fi
     let i=$i+1
@@ -32,7 +32,7 @@ if [[ $5 == "-drop" ]]; then
   sleep $SR
   for client in `cat $CLIENTS`; do
     echo $client index $i
-    ssh -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
+    ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
     let i=$i+1
   done
 else
@@ -41,7 +41,7 @@ else
   sleep $M
   for client in `cat $CLIENTS`; do
     echo $client index $i
-    ssh -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
+    ssh -i ~/.ssh/JDev.pem -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
     let i=$i+1
   done
 fi
